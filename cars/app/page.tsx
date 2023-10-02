@@ -2,7 +2,7 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import { SearchBar, CustomFilter } from "@/components";
 import { fetchCars } from "@/utils";
-
+import CarCard from "@/components/CarCard";
 export default async function Home() {
   //fetch all cars
 
@@ -27,7 +27,13 @@ export default async function Home() {
           </div>
         </div>
         {!isDataEmpty ? (
-          <section></section>
+          <section>
+            <div className="home__cars-wrapper">
+              {allCars?.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </div>
+          </section>
         ) : (
           <div className="home__error-container">
             <h2>No Results found</h2>
