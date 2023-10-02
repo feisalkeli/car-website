@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import { Link } from "react-router-dom";
 
 export interface CustomButtonProps {
   title: string;
@@ -10,3 +11,9 @@ export interface CustomButtonProps {
 export interface CustomFilterProps {
   title: string;
 }
+
+export interface CustomSearchManufacturerProps {
+  manufacturer: string;
+  setManufacturer: (manufacturer: string) => void;
+}
+//page terms and conditions
